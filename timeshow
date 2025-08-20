@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内蒙古呼运定制包车日报看板</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .header {
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #1a5276;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1a5276;
+            display: inline-block;
+        }
+        
+        .date-display {
+            font-size: 4.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 30px 0;
+            padding: 30px;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .info {
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .date-display {
+                font-size: 3rem;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            
+            .date-display {
+                font-size: 2.5rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>内蒙古呼运定制包车日报看板</h1>
+        </div>
+        
+        <div class="date-display" id="dateDisplay">
+            <!-- 日期将在这里显示 -->
+        </div>
+        
+        <div class="info">
+            <p>每日更新 · 专业服务 · 安全可靠</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateDisplay = document.getElementById('dateDisplay');
+            
+            // 更新日期显示
+            function updateDate() {
+                const now = new Date();
+                
+                // 格式化为"YYYY年MM月DD日"
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                
+                dateDisplay.textContent = `${year}年${month}月${day}日`;
+            }
+            
+            // 初始更新
+            updateDate();
+        });
+    </script>
+</body>
+</html>
